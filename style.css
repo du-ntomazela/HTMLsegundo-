@@ -1,0 +1,45 @@
+header {
+    grid-area: header;
+    background-color: red;
+    display: flex;
+    justify-content:center;
+}
+main {
+    grid-area: main;
+    background-color: rgb(130, 238, 135);
+    display: flex;
+    justify-content:center;
+}
+aside {
+    grid-area: aside;
+    background-color: rgb(255, 60, 0);
+    display: flex;
+    justify-content:center;
+}
+.container {
+    height: 770px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    gap: 10px;
+    grid-template-areas: 
+        "header header header"
+        "main main main"
+        "main main main"
+        "aside aside aside"
+    ;
+}
+
+
+@media screen and (min-width: 1024px ) {
+    .container {
+        grid-template-rows: repeat(3, 1fr);
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-areas: 
+            "header header header"
+            "main main aside"
+            "main main aside"
+        ;
+    }
+}
